@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# New Sitemap Link for Prisha Aura Cloud Repository
+Sitemap: https://prishaaura2025-cloud.github.io/Prisha-Aura/sitemap.xml
