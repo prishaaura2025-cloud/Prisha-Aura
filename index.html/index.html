@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisha Aura | Handmade Scented Candles & Custom Candle Holders in Hadapsar, Pune</title>
+    <meta name="description" content="Discover premium handmade scented candles and customized designer candle holders by Prisha Aura. Serving Hadapsar, Kalepadal and nearby areas in Pune. Perfect for home decor, birthdays, festivals and small celebrations.">
+    <meta name="keywords" content="handmade scented candles Hadapsar, customized candle holders Kalepadal, organic soy candles Pune, birthday celebration candles Hadapsar, festival decorative candles Pune, home decor candles Kalepadal, local candle makers Pune, Prisha Aura candles">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            background-color: #F7EEF5;
+        }
+        header {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 6%;
+            box-shadow: 0 2px 10px rgba(99, 29, 86, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .logo-text-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #631D56;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .location-tag {
+            font-size: 11px;
+            color: #777777;
+            font-weight: 500;
+            margin-top: -2px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li { 
+            margin-left: 25px; 
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #631D56;
+        }
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+                .slide:nth-child(1) {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://unsplash.com') center/cover no-repeat;
+        }
+        .slide:nth-child(2) {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://unsplash.com') center/cover no-repeat;
+        }
+        .slide:nth-child(3) {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://unsplash.com') center/cover no-repeat;
+        }
+
+        .slider-content {
+            color: #ffffff;
+            padding: 0 20px;
+            max-width: 800px;
+            z-index: 10;
+        }
+        .slider-content h1 {
+            font-size: 45px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+        .slider-content p {
+            font-size: 19px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+        }
+        .btn {
+            display: inline-block;
+            background: #631D56;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #4a123f;
+        }
+        section { 
+            padding: 80px 8%; 
+            text-align: center; 
+        }
+        section h2 {
+            font-size: 32px;
+            color: #631D56;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        section h2::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: #631D56;
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .section-desc {
+            color: #666666;
+            margin-bottom: 50px;
+            font-size: 16px;
+        }
+        #about {
+            background-color: #ffffff;
+        }
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 17px;
+            color: #444444;
+        }
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .product-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 320px;
+            box-shadow: 0 5px 15px rgba(99, 29, 86, 0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid #e8dbe5;
+            text-align: left;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(99, 29, 86, 0.1);
+        }
+        .product-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-info h3 {
+            font-size: 20px;
+            color: #631D56;
+            margin-bottom: 10px;
+        }
+        .product-info p {
+            color: #666666;
+            font-size: 14px;
+        }
+        #contact {
+            background-color: #ffffff;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 25px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s ease;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.03);
+        }
+        .local-info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777777;
+        }
+        footer { 
+            background: #23061d; 
+            color: #f5eef4; 
+            padding: 30px 20px; 
+            text-align: center; 
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px; }
+            nav ul { margin-top: 15px; }
+            nav ul li { margin: 0 10px; }
+            .slider-container { height: 400px; }
+            .slider-content h1 { font-size: 32px; }
+            .slider-content p { font-size: 16px; }
+        }
+
+        /* ================= PRISHA AURA LAVENDER FOOTER STYLING ================= */
+.site-footer {
+    background-color: #f3eaf4; 
+    border-top: 3px solid #631d56;
+    padding: 60px 40px 40px 40px;
+    font-family: 'Poppins', sans-serif, Arial;
+    color: #4a3344; 
+}
+
+
+.footer-container {
+    max-width: 1250px;
+    margin: 0 auto; 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+
+.footer-column {
+    flex: 1 !important;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.footer-brand-box {
+    flex: 1.2 !important; 
+}
+
+.footer-brand-box .logo-card {
+    background: #ffffff;
+    padding: 35px 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 100%;
+    max-width: 220px;
+    box-shadow: 0 8px 25px rgba(99, 29, 86, 0.06); 
+    border: 1px solid #ebdbe6;
+}
+
+.logo-card h2 {
+    color: #631d56; 
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.logo-card span {
+    color: #bfa15f; 
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-top: 6px;
+}
+
+
+.footer-column h4 {
+    color: #631d56; 
+    font-size: 1.1rem;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 12px;
+}
+
+.footer-list li a {
+    color: #574252;
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: all 0.2s ease;
+}
+
+.footer-list li a:hover {
+    color: #631d56;
+    font-weight: 500;
+    padding-left: 3px;
+}
+
+.footer-studio-text {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #574252;
+    margin: 0;
+}
+
+
+.connect-info {
+    font-size: 0.9rem;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    color: #574252;
+}
+
+.connect-info strong {
+    color: #631d56;
+}
+
+.social-title-sub {
+    margin-top: 15px !important;
+    margin-bottom: 12px !important;
+}
+
+
+.footer-social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    text-decoration: none;
+    color: #631d56;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-bottom: 1px solid #631d56;
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+}
+
+.social-btn:hover {
+    color: #bfa15f;
+    border-bottom-color: #bfa15f;
+}
+
+
+@media (max-width: 992px) {
+    .footer-container {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
+    .footer-column {
+        align-items: center;
+        text-align: center;
+    }
+    .footer-brand-box {
+        display: flex;
+        justify-content: center;
+    }
+    .footer-social-icons {
+        justify-content: center;
+    }
+}
+
+
+.scroll-top {
+    text-decoration: none;
+    color: #ffbde7;
+    font-weight: 600;
+}
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .footer-right {
+        align-items: center;
+    }
+    .footer-nav {
+        justify-content: center;
+    }
+}
+#faq, .faq-section {
+    background-color: #ffffff !important; 
+}
+
+.site-footer {
+    margin-top: 60px !important; 
+}
+
+
+.footer-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important; 
+    align-items: flex-start !important; 
+}
+
+.footer-column {
+    flex: 1 1 200px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; 
+    text-align: left !important;
+}
+
+
+.footer-column h4, 
+.footer-studio-text, 
+.connect-info,
+.footer-list {
+    text-align: left !important;
+    align-items: flex-start !important;
+}
+
+.footer-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important; 
+}
+
+    </style>
+</head>
+<body>
+
+        <header>
+        <div class="logo-area">
+            <img src="logo.png" alt="Prisha Aura Logo" class="logo-img">
+            <div class="logo-text-wrapper">
+                <span class="logo">Prisha Aura</span>
+                <span class="location-tag">Handmade Scented Candles</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Collection</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="home" class="slider-container">
+        <!-- Slide 1 -->
+        <div class="slide active" style="position: absolute; width: 100%; height: 100%;">
+            
+            <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\handcraftcandles.png" alt="Scented Candles" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1;">
+            <div style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2;"></div>
+            <div class="slider-content" style="z-index: 3; position: relative;">
+                <h1>Handcrafted Scented Candles In Hadapsar</h1>
+                <p>Elevate your space with premium, highly fragrant homemade candles tailored to your design preferences.</p>
+                <a href="#products" class="btn">Explore Our Collection</a>
+            </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="slide" style="position: absolute; width: 100%; height: 100%;">
+            
+            <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\candleholder.png" alt="Candle Holders" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1;">
+            <div style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2;"></div>
+            <div class="slider-content" style="z-index: 3; position: relative;">
+                <h1>Custom Designer Candle Holders</h1>
+                <p>Explore an exclusive array of uniquely designed candle holders available locally around Kalepadal, Pune.</p>
+                <a href="#candle-holders" class="btn">View Variations</a>
+            </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="slide" style="position: absolute; width: 100%; height: 100%;">
+            
+            <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\festival.png" alt="Celebration Candles" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1;">
+            <div style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2;"></div>
+            <div class="slider-content" style="z-index: 3; position: relative;">
+                <h1>Celebrate Intimate Occasions</h1>
+                <p>Specially curated aesthetic packs perfectly suited for birthdays, corporate parties and traditional festivals.</p>
+                <a href="#shop" class="btn">Order Custom Pack</a>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+        <section id="about">
+        <h2>About Prisha Aura</h2>
+        <p class="section-desc">Home-based Premium Candle Studio in Pune</p>
+        
+        <div class="about-text" style="text-align: left; max-width: 900px; margin: 0 auto; font-size: 16px; color: #444444;">
+            <p style="margin-bottom: 15px;">Welcome to <strong>Prisha Aura</strong>, your trusted local destination for premium, 100% handcrafted scented candles and elegant designer candle holders, proudly operating from the heart of <strong>Hadapsar and Kalepadal, Pune</strong>. We firmly believe that every corner of your home deserves a soothing touch and a beautiful glow.</p>
+            
+            <p style="margin-bottom: 20px;">As a dedicated home studio, we specialize in creating custom-designed candles crafted meticulously by hand. We use high-quality, eco-friendly wax infused with premium therapeutic fragrances that transform your space into a peaceful sanctuary.</p>
+            
+            <h3 style="color: #631D56; font-size: 20px; margin-bottom: 10px;">Our Specialties & Customizations:</h3>
+
+            <ul style="list-style-type: square; margin-left: 20px; margin-bottom: 25px; line-height: 1.8;">
+                <li><strong>Multiple Shapes & Sizes:</strong> From elegant jar candles and minimalist pillars to creative aesthetic shapes tailored perfectly to your taste.</li>
+                <li><strong>Exclusive Candle Holders:</strong> Beautifully handcrafted holders available in multiple unique designs to elevate your home decor.</li>
+                <li><strong>Occasion-Specific Packs:</strong> Specially curated collections perfect for birthdays, intimate parties, corporate gifts and small family celebrations.</li>
+                <li><strong>Festive Collections:</strong> Uplit your festive spirit during Diwali, Christmas and other celebrations with our custom decorative candle sets.</li>
+            </ul>
+
+            <p style="font-weight: 600; color: #631D56; text-align: center; background-color: #ffffff; padding: 15px; border-radius: 8px; border: 1px dashed #631D56;">
+                ✨ "No retail shop, just pure home-crafted love safely delivered straight to your doorstep in the Hadapsar area!"
+            </p>
+        </div>
+    </section>
+        
+<section id="products" style="background: #ffffff; padding: 20px 4% 30px 4%;">
+
+        <h2 style="margin-top: 0; padding-top: 0;">Our Premium Collections</h2>
+        <p class="section-desc">Exquisite handcrafted creations tailored for your special moments</p>
+        
+        
+        <div class="product-grid" style="display: flex; justify-content: space-between; flex-wrap: nowrap; gap: 20px; margin-top: 20px; width: 100%; overflow-x: auto; padding-bottom: 10px;">
+            
+            <!-- Category 1: Home Decor -->
+            <div class="product-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; flex: 1; min-width: 240px; box-shadow: 0 10px 30px rgba(99, 29, 86, 0.06); transition: all 0.4s ease; border: 1px solid #f3ebf2; position: relative;">
+                <div style="overflow: hidden; height: 240px;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\homedecor.png" alt="Aesthetic Home Decor Candles Hadapsar" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="product-info" style="padding: 20px; text-align: left;">
+                    <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #631D56; font-weight: 700; display: block; margin-bottom: 5px;">Aesthetic Glow</span>
+                    <h3 style="font-size: 18px; color: #631D56; margin-bottom: 8px; font-weight: 600;">Home Decor</h3>
+                    <p style="color: #666666; font-size: 13px; line-height: 1.5;">Elegant pillar shapes, textured geometric designs and beautiful candle holders crafted to give your living space a warm, luxurious aesthetic.</p>
+                </div>
+            </div>
+
+            <!-- Category 2: Birthday -->
+            <div class="product-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; flex: 1; min-width: 240px; box-shadow: 0 10px 30px rgba(99, 29, 86, 0.06); transition: all 0.4s ease; border: 1px solid #f3ebf2; position: relative;">
+                <div style="overflow: hidden; height: 240px;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\birthday.png" alt="Custom Birthday Candles Pune" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="product-info" style="padding: 20px; text-align: left;">
+                    <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #631D56; font-weight: 700; display: block; margin-bottom: 5px;">Make A Wish</span>
+                    <h3 style="font-size: 18px; color: #631D56; margin-bottom: 8px; font-weight: 600;">Birthday Specials</h3>
+                    <p style="color: #666666; font-size: 13px; line-height: 1.5;">Customized numbers, vibrant colors and sweet, celebratory fragrances perfectly detailed to make cake-cutting memories unforgettable.</p>
+                </div>
+            </div>
+
+            <!-- Category 3: Parties & Celebrations -->
+            <div class="product-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; flex: 1; min-width: 240px; box-shadow: 0 10px 30px rgba(99, 29, 86, 0.06); transition: all 0.4s ease; border: 1px solid #f3ebf2; position: relative;">
+                <div style="overflow: hidden; height: 240px;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\parties.png" alt="Party and Celebration Candle Packs Kalepadal" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="product-info" style="padding: 20px; text-align: left;">
+                    <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #631D56; font-weight: 700; display: block; margin-bottom: 5px;">Joyful Events</span>
+                    <h3 style="font-size: 18px; color: #631D56; margin-bottom: 8px; font-weight: 600;">Parties & Events</h3>
+                    <p style="color: #666666; font-size: 13px; line-height: 1.5;">Beautifully bundled mini candle favors and customized theme melts designed to delight your guests at small gatherings and intimate parties.</p>
+                </div>
+            </div>
+
+            <!-- Category 4: Festivals -->
+            <div class="product-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; flex: 1; min-width: 240px; box-shadow: 0 10px 30px rgba(99, 29, 86, 0.06); transition: all 0.4s ease; border: 1px solid #f3ebf2; position: relative;">
+                <div style="overflow: hidden; height: 240px;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\festivalcandle.png" alt="Traditional Indian Festival Candles Pune" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="product-info" style="padding: 20px; text-align: left;">
+                    <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #631D56; font-weight: 700; display: block; margin-bottom: 5px;">Divine Light</span>
+                    <h3 style="font-size: 18px; color: #631D56; margin-bottom: 8px; font-weight: 600;">Festivals</h3>
+                    <p style="color: #666666; font-size: 13px; line-height: 1.5;">Traditional yet modern decorative candle sets to fill your home with light and rich festive aromas during Diwali, Christmas and new beginnings.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+              <section id="candle-holders" style="background: #ffffff; padding: 20px 4% 30px 4%;">
+  
+    <div style="margin-top: 40px; text-align: center; padding: 0 5%;">
+            <h3 style="font-size: 26px; color: #631D56; margin-bottom: 10px; font-weight: 700;">Exclusive Handcrafted Candle Holders</h3>
+            <p style="color: #666666; font-size: 15px; max-width: 700px; margin: 0 auto 35px auto; line-height: 1.6;">
+                Complement your premium scented melts with our beautifully styled custom candle holders. Crafted right here in our home studio, these artistic holders are available in multiple unique textures, shapes and structural designs to perfectly blend with your modern home decor and festive layouts.
+            </p>
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+                
+                <div style="background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder1.jpeg" alt="Candle Holder Design 1" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div style="background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder2.jpeg" alt="Candle Holder Design 2" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div style="background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder3.jpeg" alt="Candle Holder Design 3" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+
+                <div class="hidden-holders" style="display: none; background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder4.jpeg" alt="Candle Holder Design 4" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="hidden-holders" style="display: none; background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder5.png" alt="Candle Holder Design 5" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="hidden-holders" style="display: none; background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder6.png" alt="Candle Holder Design 6" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="hidden-holders" style="display: none; background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder7.png" alt="Candle Holder Design 6" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                 <div class="hidden-holders" style="display: none; background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder8.png" alt="Candle Holder Design 6" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="hidden-holders" style="display: none; background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder9.png" alt="Candle Holder Design 6" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="hidden-holders" style="display: none; background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder10.png" alt="Candle Holder Design 6" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="hidden-holders" style="display: none; background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder11.jpeg" alt="Candle Holder Design 6" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="hidden-holders" style="display: none; background: #ffffff; border-radius: 12px; overflow: hidden; width: 220px; height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); border: 1px solid #f3ebf2;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\holder12.jpeg" alt="Candle Holder Design 6" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+            </div>
+
+            <button id="viewMoreBtn" onclick="toggleHolders()" style="margin-top: 30px; background: transparent; color: #631D56; border: 2px solid #631D56; padding: 10px 25px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: inline-block; margin-left: auto; margin-right: auto;">
+                View More Designs ↓
+            </button>
+        </div>
+
+        <script>
+            function toggleHolders() {
+                const hiddenItems = document.querySelectorAll('.hidden-holders');
+                const btn = document.getElementById('viewMoreBtn');
+                
+                if (hiddenItems[0].style.display === 'none') {
+                    hiddenItems.forEach(item => item.style.display = 'block');
+                    btn.innerHTML = 'Show Less ↑';
+                } else {
+                    hiddenItems.forEach(item => item.style.display = 'none');
+                    btn.innerHTML = 'View More Designs ↓';
+                }
+            }
+        </script>
+
+        <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(nextSlide, 3000);
+    </script>
+    <section id="shop" style="background: #ffffff; padding: 80px 4%;">
+        <h2 style="font-size: 32px; color: #631D56; margin-bottom: 10px; text-align: center; font-weight: 700;">Shop Our Collection</h2>
+        <p class="section-desc" style="color: #666666; margin-bottom: 50px; font-size: 16px; text-align: center;">Directly order your favorite handmade scented candle batches</p>
+        
+        <div class="shop-grid" style="display: flex; justify-content: space-between; flex-wrap: nowrap; gap: 20px; width: 100%; overflow-x: auto; padding-bottom: 20px;">
+            
+            <!-- Product 1 -->
+            <div class="shop-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(99, 29, 86, 0.06); border: 1px solid #f3ebf2; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="position: relative; height: 250px; overflow: hidden;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\lavendercandle.png" alt="Premium Soy Scented Candle" style="width: 100%; height: 100%; object-fit: cover;">
+                    <span style="position: absolute; top: 15px; left: 15px; background: #631D56; color: #ffffff; padding: 4px 10px; font-size: 12px; font-weight: 600; border-radius: 20px;">Best Seller</span>
+                </div>
+                <div style="padding: 20px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="font-size: 18px; color: #631D56; margin-bottom: 5px; font-weight: 600;">Lavender Luxury Candle</h3>
+                        <div style="color: #ffb703; font-size: 14px; margin-bottom: 10px;">★ ★ ★ ★ ★ <span style="color: #777777; font-size: 12px;">(4.9)</span></div>
+                        <p style="color: #666666; font-size: 13px; margin-bottom: 15px;">Relaxing organic soy candle infused with premium French lavender therapeutic essential oils.</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 20px; font-weight: 700; color: #631D56; margin-bottom: 15px;">₹299 <span style="font-size: 14px; font-weight: 400; color: #888; text-decoration: line-through;">₹399</span></div>
+                        <a href="https://wa.me/919373656781?text=Hello%20Prisha%20Aura" target="_blank" style="display: block; text-align: center; background: #631D56; color: #ffffff; padding: 10px; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.3s;" onmouseover="this.style.background='#4a123f'" onmouseout="this.style.background='#631D56'">Order Now</a>
+                    
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="shop-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(99, 29, 86, 0.06); border: 1px solid #f3ebf2; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="position: relative; height: 250px; overflow: hidden;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\rosecandle.png" alt="Rose Petal Scented Candle" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="padding: 20px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="font-size: 18px; color: #631D56; margin-bottom: 5px; font-weight: 600;">Rose Petal Bliss</h3>
+                        <div style="color: #ffb703; font-size: 14px; margin-bottom: 10px;">★ ★ ★ ★ ★ <span style="color: #777777; font-size: 12px;">(4.8)</span></div>
+                        <p style="color: #666666; font-size: 13px; margin-bottom: 15px;">Romantic and deep floral aroma blended seamlessly with real dried red rose petals.</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 20px; font-weight: 700; color: #631D56; margin-bottom: 15px;">₹349 <span style="font-size: 14px; font-weight: 400; color: #888; text-decoration: line-through;">₹450</span></div>
+                        <a href="https://wa.me/919373656781?text=Hello%20Prisha%20Aura" target="_blank" style="display: block; text-align: center; background: #631D56; color: #ffffff; padding: 10px; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.3s;" onmouseover="this.style.background='#4a123f'" onmouseout="this.style.background='#631D56'">Order Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="shop-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(99, 29, 86, 0.06); border: 1px solid #f3ebf2; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="position: relative; height: 250px; overflow: hidden;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\vanillacandle.png" alt="Vanilla Caramel Candle" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="padding: 20px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="font-size: 18px; color: #631D56; margin-bottom: 5px; font-weight: 600;">Vanilla Caramel Crust</h3>
+                        <div style="color: #ffb703; font-size: 14px; margin-bottom: 10px;">★ ★ ★ ★ ★ <span style="color: #777777; font-size: 12px;">(5.0)</span></div>
+                        <p style="color: #666666; font-size: 13px; margin-bottom: 15px;">Warm, sweet dessert-like fragrance bringing a cozy bakery ambient straight into your home.</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 20px; font-weight: 700; color: #631D56; margin-bottom: 15px;">₹299 <span style="font-size: 14px; font-weight: 400; color: #888; text-decoration: line-through;">₹399</span></div>
+                        <a href="https://wa.me/919373656781?text=Hello%20Prisha%20Aura"_blank" style="display: block; text-align: center; background: #631D56; color: #ffffff; padding: 10px; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.3s;" onmouseover="this.style.background='#4a123f'" onmouseout="this.style.background='#631D56'">Order Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="shop-card" style="background: #ffffff; border-radius: 16px; overflow: hidden; flex: 1; min-width: 250px; box-shadow: 0 10px 30px rgba(99, 29, 86, 0.06); border: 1px solid #f3ebf2; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="position: relative; height: 250px; overflow: hidden;">
+                    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\midnightjasmin.png" alt="Sandalwood Festive Candle" style="width: 100%; height: 100%; object-fit: cover;">
+                    <span style="position: absolute; top: 15px; left: 15px; background: #d4a373; color: #ffffff; padding: 4px 10px; font-size: 12px; font-weight: 600; border-radius: 20px;">Festive Spec</span>
+                </div>
+                <div style="padding: 20px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="font-size: 18px; color: #631D56; margin-bottom: 5px; font-weight: 600;">Midnight Jasmine</h3>
+                        <div style="color: #ffb703; font-size: 14px; margin-bottom: 10px;">★ ★ ★ ★ ★ <span style="color: #777777; font-size: 12px;">(4.7)</span></div>
+                        <p style="color: #666666; font-size: 13px; margin-bottom: 15px;">"A deep, romantic and elegant floral fragrance, perfect for evening relaxation."</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 20px; font-weight: 700; color: #631D56; margin-bottom: 15px;">₹399 <span style="font-size: 14px; font-weight: 400; color: #888; text-decoration: line-through;">₹499</span></div>
+                        <a href="https://wa.me/919373656781?text=Hello%20Prisha%20Aura" target="_blank" style="display: block; text-align: center; background: #631D56; color: #ffffff; padding: 10px; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.3s;" onmouseover="this.style.background='#4a123f'" onmouseout="this.style.background='#631D56'">Order Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="contact" style="background: #ffffff; padding: 80px 4%;">
+        <h2 style="font-size: 32px; color: #631D56; margin-bottom: 10px; text-align: center; font-weight: 700;">Connect With Us</h2>
+        <p class="section-desc" style="color: #666666; margin-bottom: 50px; font-size: 16px; text-align: center;">Place your handcrafted candle orders or drop your queries</p>
+        
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; text-align: left; max-width: 1200px; margin: 0 auto;">
+            
+            <div style="flex: 1; min-width: 300px; background: #F7EEF5; padding: 40px; border-radius: 20px; border: 1px solid #e8dbe5;">
+                <h3 style="color: #631D56; font-size: 22px; margin-bottom: 25px; font-weight: 600;">Contact Details</h3>
+                
+                <div style="margin-bottom: 30px;">
+                    <p style="font-weight: 700; color: #631D56; margin-bottom: 10px;">💬 Order Via WhatsApp:</p>
+                    <a href="https://wa.me/919373656781" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px; font-weight: 600; margin-bottom: 10px; margin-right: 10px;">Order via Primary</a>
+                    <a href="https://wa.me/919373321055" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px; font-weight: 600; margin-bottom: 10px;">Order via Secondary</a>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <p style="font-weight: 700; color: #631D56; margin-bottom: 5px;">📍 Studio Location:</p>
+                    <p style="color: #4a4a4a;">Kalepadal, Hadapsar, Pune, Maharashtra - 411028</p>
+                    <p style="font-size: 13px; color: #777777; margin-top: 5px;">🏡 Home-based Studio (Prior appointment required for order pickups)</p>
+                </div>
+
+                <div>
+                    <p style="font-weight: 700; color: #631D56; margin-bottom: 15px;">🌐 Follow Our Journey:</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="https://www.instagram.com/prishaaura/" target="_blank" style="color: #631D56; text-decoration: none; font-weight: 600; border-bottom: 2px solid #631D56;">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61584816953970&sk=about_details" target="_blank" style="color: #631D56; text-decoration: none; font-weight: 600; border-bottom: 2px solid #631D56;">Facebook</a>
+                        <a href="https://www.youtube.com/@PrishaAura-u7w" target="_blank" style="color: #631D56; text-decoration: none; font-weight: 600; border-bottom: 2px solid #631D56;">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; height: 420px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(99, 29, 86, 0.05); border: 1px solid #e8dbe5;">
+    
+    
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.012997076337!2d73.93539567423645!3d18.48307047032053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e96f72eacdfb%3A0xf47fb37b72802a8!2sAdarsh%20colony!5e0!3m2!1sen!2sin!4v1792397681214!5m2!1sen!2sin" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+</div>
+
+        </div>
+    </section>
+
+        <section id="faqs" style="background: #F7EEF5; padding: 80px 4%;">
+        <h2 style="font-size: 32px; color: #631D56; margin-bottom: 10px; text-align: center; font-weight: 700;">Frequently Asked Questions</h2>
+        <p class="section-desc" style="color: #666666; margin-bottom: 50px; font-size: 16px; text-align: center;">Everything you need to know about Prisha Aura candles and orders</p>
+        
+        <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+            
+            <!-- FAQ 1: Ordering Process -->
+            <div style="background: #ffffff; border-radius: 12px; margin-bottom: 15px; border: 1px solid #e8dbe5; overflow: hidden;">
+                <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 20px; font-size: 16px; font-weight: 600; color: #631D56; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    How do I place an order for candles or holders?
+                    <span style="font-size: 20px;">+</span>
+                </button>
+                <div style="display: none; padding: 0 20px 20px 20px; color: #555555; font-size: 14px; line-height: 1.6;">
+                    You can easily place your order by clicking the "Order Now" or "WhatsApp" buttons on our website. Since we customize candles in multiple shapes, sizes and designs, you can share your requirements directly with us on WhatsApp and we will book your order.
+                </div>
+            </div>
+
+            <!-- FAQ 2: Delivery Area & Charges -->
+            <div style="background: #ffffff; border-radius: 12px; margin-bottom: 15px; border: 1px solid #e8dbe5; overflow: hidden;">
+                <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 20px; font-size: 16px; font-weight: 600; color: #631D56; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    Do you provide home delivery in Hadapsar and Kalepadal?
+                    <span style="font-size: 20px;">+</span>
+                </button>
+                <div style="display: none; padding: 0 20px 20px 20px; color: #555555; font-size: 14px; line-height: 1.6;">
+                    Yes, we provide safe doorstep package delivery across Kalepadal, Hadapsar, Handewadi and all nearby areas in Pune. Once you place an order on WhatsApp, we will confirm the delivery time and minimal delivery charges based on your exact location.
+                </div>
+            </div>
+
+            <!-- FAQ 3: Customization for Events -->
+            <div style="background: #ffffff; border-radius: 12px; margin-bottom: 15px; border: 1px solid #e8dbe5; overflow: hidden;">
+                <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 20px; font-size: 16px; font-weight: 600; color: #631D56; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    Can I order bulk customized candles for birthdays, weddings, or festivals?
+                    <span style="font-size: 20px;">+</span>
+                </button>
+                <div style="display: none; padding: 0 20px 20px 20px; color: #555555; font-size: 14px; line-height: 1.6;">
+                    Absolutely! We specialize in bulk customized candle favors and gift packs for birthdays, anniversary parties, small family celebrations, corporate events and Indian festivals like Diwali. Please connect with us at least 4-5 days in advance for bulk event orders.
+                </div>
+            </div>
+
+            <!-- FAQ 4: Materials and Safety -->
+            <div style="background: #ffffff; border-radius: 12px; margin-bottom: 15px; border: 1px solid #e8dbe5; overflow: hidden;">
+                <button onclick="toggleFaq(this)" style="width: 100%; background: none; border: none; padding: 20px; font-size: 16px; font-weight: 600; color: #631D56; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    What materials are used in your candles and designer holders?
+                    <span style="font-size: 20px;">+</span>
+                </button>
+                <div style="display: none; padding: 0 20px 20px 20px; color: #555555; font-size: 14px; line-height: 1.6;">
+                    Our premium scented candles are 100% handmade using eco-friendly natural soy wax and high-quality aromatic essential oils. Our designer candle holders are crafted from durable, fire-safe materials to securely support your favorite aesthetic melts.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <script>
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('span');
+            
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                icon.innerText = "+";
+            } else {
+                content.style.display = "block";
+                icon.innerText = "−";
+            }
+        }
+    </script>
+<!-- ================= PRISHA AURA LAVENDER MOCKUP FOOTER ================= -->
+<footer class="site-footer">
+    <div class="footer-container">
+        
+       
+        <div class="footer-column footer-brand-box">
+            
+<div class="logo-card">
+    
+    <img src="c:\Users\Admin\Downloads\Prisha Aura Website\images\logo.png" alt="Prisha Aura" style="max-width: 100%; height: auto; max-height: 100px;">
+    <span>ENLIGHTENING WORLD</span>
+</div>
+
+        </div>
+
+        
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul class="footer-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+
+       
+        <div class="footer-column">
+            <h4>Products</h4>
+            <ul class="footer-list">
+                <li><a href="#products">Scented Candles</a></li>
+                <li><a href="#candle-holders">Candle Holders</a></li>
+                <li><a href="#products">Custom Designer Kits</a></li>
+            </ul>
+        </div>
+
+        
+        <div class="footer-column">
+            <h4>Our Studio</h4>
+            <p class="footer-studio-text">
+                Adarsh Colony, near Kalepadal Rail Crossing,<br>
+                Hadapsar, Pune - 411028
+            </p>
+        </div>
+
+        
+        <div class="footer-column footer-connect">
+            <h4>Connect</h4>
+            <p class="connect-info"><strong>Sales & Support:</strong> +91 9373656781</p>
+            <p class="connect-info"><strong>Email:</strong> prishaaura2025@gmail.com</p>
+            
+            <h4 class="social-title-sub">Social Link</h4>
+            <div class="footer-social-icons">
+                <a href="https://www.instagram.com/prishaaura/" target="_blank" class="social-btn">Instagram</a>
+                <a href="https://wa.me/919373656781" target="_blank" class="social-btn">WhatsApp</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- ================= FOOTER END ================= -->
+
+
+
+</body>
+</html>
+
