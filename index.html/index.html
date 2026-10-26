@@ -492,13 +492,15 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-            <script>
+                
+    <script>
+      if (window.location.pathname.includes('index.html')) {
+        const cleanUrl = window.location.href.replace(/index\.html\/?/, '');
+        window.location.replace(cleanUrl);
+      }
+    </script>
+</head>
 
-  if (window.location.pathname.includes('index.html')) {
-    const cleanUrl = window.location.href.replace(/index\.html\/?/, '');
-    window.location.replace(cleanUrl);
-  }
-</script>
 
     </header>
 
